@@ -1,0 +1,157 @@
+.back-to-home__btn-container {
+  background-color: #FFFD82;
+  height: 50px;
+  width: 200px;
+  border: 2px solid black;
+  text-align: right;
+  margin: 30px;
+  padding: 12px;
+  display: flex;
+}
+.back-to-home__btn-container .back-to-home__arrow {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 20px;
+}
+.back-to-home__btn-container .back-to-home__btn {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+.reset__btn {
+  height: 30px;
+  width: 90px;
+  margin: 20px 150px;
+  background-color: #820933;
+  border: 2px solid black;
+  font-size: 18px;
+  color: white;
+}
+
+.start__btn-container {
+  background-color: #2AD331;
+  height: 50px;
+  width: 100px;
+  border: 2px solid black;
+  text-align: center;
+  margin: 50px 150px;
+}
+
+.start__btn {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+}
+
+.tic-tac-toe__container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
+
+.tic-tac-toe__grid {
+  height: 300px;
+  width: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tic-tac-toe__square {
+  border: 3px solid black;
+}
+
+.tic-tac-toe__instruction {
+  text-align: center;
+  margin: 30px;
+  font-weight: bold;
+}
+
+.scoreboard__container {
+  border: 3px solid black;
+  background-color: #FF9B71;
+  height: 140px;
+  width: 200px;
+  margin: 30px 100px;
+}
+
+.scoreboard__header {
+  text-align: center;
+  font-size: 22px;
+  font-weight: lighter;
+}
+
+.home__background-img {
+  position: absolute;
+  background: url(assets/media/home-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 60%;
+}
+
+.home__header {
+  font-size: 64px;
+  text-align: center;
+  padding: 150px 50px 50px;
+}
+
+.player__name-field-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 30px 50px;
+  width: 290px;
+}
+.player__name-field-container .player__name {
+  font-weight: bold;
+  font-size: 16px;
+  align-self: center;
+  border: 1px solid black;
+  padding: 5px 1px;
+}
+.player__name-field-container #player__name-one {
+  background-color: #FF540A;
+}
+.player__name-field-container #player__name-two {
+  background-color: #26FFE6;
+}
+.player__name-field-container .player__name-field {
+  height: 30px;
+  align-self: center;
+  font-size: 14px;
+  padding: 10px 0px;
+}
+
+.home__instructions-header {
+  text-align: center;
+  margin: 40px;
+  font-size: 30px;
+}
+
+.home__instructions-description {
+  text-align: center;
+  margin: 20px;
+  font-weight: bolder;
+}
+
+.back-to-home__btn, .reset__btn, .tic-tac-toe__square, .scoreboard__header, .home__header, .home__instructions-header, .start__btn {
+  font-family: "Caveat Brush", cursive;
+}
+
+.tic-tac-toe__instruction, .player__name-field-container, .home__instructions-description {
+  font-family: "Raleway", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

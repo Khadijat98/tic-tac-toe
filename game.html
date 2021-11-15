@@ -13,28 +13,33 @@
 </head>
 
 <body>
-  <a href="index.html">Back to Home Page</a>
-  <h1>Tic-Tac-Toe</h1>
+  
+  <div class="back-to-home__btn-container">
+    <div class="back-to-home__arrow">&#8592;</div>
+    <a href="index.html" class="back-to-home__btn">Back to Home Page</a>
+  </div>
   <div class="tic-tac-toe__container">
     <section class="tic-tac-toe__grid">
-      <div class="tic-tac-toe__square-one"></div>
-      <div class="tic-tac-toe__square-two"></div>
-      <div class="tic-tac-toe__square-three"></div>
-      <div class="tic-tac-toe__square-four"></div>
-      <div class="tic-tac-toe__square-five"></div>
-      <div class="tic-tac-toe__square-six"></div>
-      <div class="tic-tac-toe__square-seven"></div>
-      <div class="tic-tac-toe__square-eight"></div>
-      <div class="tic-tac-toe__square-nine"></div>
+      <div class="tic-tac-toe__square" id="square-one"></div>
+      <div class="tic-tac-toe__square" id="square-two"></div>
+      <div class="tic-tac-toe__square" id="square-three"></div>
+      <div class="tic-tac-toe__square" id="square-four"></div>
+      <div class="tic-tac-toe__square" id="square-five"></div>
+      <div class="tic-tac-toe__square" id="square-six"></div>
+      <div class="tic-tac-toe__square" id="square-seven"></div>
+      <div class="tic-tac-toe__square" id="square-eight"></div>
+      <div class="tic-tac-toe__square" id="square-nine"></div>
     </section>
-    <p class="tic-tac-toe__instruction">Click anywhere on the grid to start</p>
   </div>
+  <!--Instruction disappears when player one clicks any square in the grid and reappears on reset-->
+  <p class="tic-tac-toe__instruction">Click anywhere on the grid to start!</p>
   <section class="scoreboard__container">
     <h3 class="scoreboard__header">Scoreboard</h3>
-    <p class="player-one-name player-one-score"></p>
-    <p class="player-two-name player-two-score"></p>
+    <!--fields will be filled in with player name that is entered on home page and will be updated with their score-->
+    <p class="player-name player-score" id="player-one"></p>
+    <p class="player-name player-score" id="player-two"></p>
   </section>
-  <button class="btn__reset">Reset</button>
+  <button class="reset__btn">Reset</button>
   
   <script src="script.js"></script>
 </body>

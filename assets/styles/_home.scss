@@ -1,0 +1,63 @@
+.home__background-img {
+  position: absolute;
+  background: url(assets/media/home-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  opacity: 60%;
+}
+
+.home__header {
+  font-size: 64px;
+  text-align: center;
+  padding: 150px 50px 50px;
+}
+
+.player__name-field-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 30px 50px;
+  width: 290px;
+  
+
+  .player__name {
+    font-weight: bold;
+    font-size: 16px;
+    align-self: center;
+    border: 1px solid black;
+    padding: 5px 1px;
+  }
+
+  #player__name-one {
+    background-color: #FF540A;
+  }
+
+  #player__name-two {
+    background-color: #26FFE6;
+  }
+
+  .player__name-field {
+    height: 30px;
+    align-self: center;
+    font-size: 14px;
+    padding: 10px 0px;
+  }
+}
+
+.home__instructions-header {
+  text-align: center;
+  margin: 40px;
+  font-size: 30px;
+}
+
+.home__instructions-description {
+  text-align: center;
+  margin: 20px;
+  font-weight: bolder;
+}
+
