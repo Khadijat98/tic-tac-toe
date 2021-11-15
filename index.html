@@ -9,11 +9,23 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-  <title>Tic Tac Toe</title>
+  <title>Home: Tic-Tac-Toe</title>
 </head>
 
 <body>
- <!--Home Page--> 
+  <!--Home Page-->
+  <div class="home__background-img"></div>
+  <h1 class="home__header">Tic-Tac-Toe</h1>
+  <!--Player One Form Input-->
+  <label for="player-one-name" class="player__name">Player One:</label>
+  <input type="text" name="player-one-name" id="player-one-name" placeholder="Enter Your Name Here">
+  <!--Player Two Form Input-->
+  <label for="player-two-name" class="player__name">Player Two:</label>
+  <input type="text" name="player-two-name" id="player-two-name" placeholder="Enter Your Name Here">
+  <!--Instructions-->
+  <h3 class="home__instructions-header">Instructions</h3>
+  <p class="home__instructions-description">Play in turns and line up three “X’s” or “O’s” horizontally, vertically or diagonally on the grid to win a point. The first to win five points wins the game. Good luck!</p>
+  <a href="game.html" class="btn__start">Start</a>
 
   <script src="script.js"></script>
 </body>
