@@ -23,10 +23,17 @@
   padding-left: 5px;
 }
 
+.reset__btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .reset__btn {
   height: 30px;
   width: 90px;
-  margin: 20px 150px;
+  margin: 100px 150px 0;
   background-color: #820933;
   border: 2px solid black;
   font-size: 18px;
@@ -54,13 +61,18 @@
   font-size: 30px;
 }
 
+#section-2 {
+  height: 100vh;
+  width: 100vw;
+}
+
 .game__background-img {
   position: absolute;
   background: url(assets/media/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-width: 100vw;
+  width: 100vw;
   height: 100vh;
   z-index: -1;
   opacity: 90%;
@@ -83,12 +95,24 @@
   height: 300px;
   width: 300px;
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
 }
 
 .tic-tac-toe__square {
   border: 3px solid black;
+  text-align: center;
+  font-size: 70px;
+  height: 100px;
+  width: 100px;
+}
+@media only screen and (min-width: 500px) {
+  .tic-tac-toe__square {
+    height: 150px;
+    width: 150px;
+    font-size: 100px;
+  }
 }
 
 #square-one {
@@ -129,22 +153,22 @@
 
 .tic-tac-toe__instruction {
   text-align: center;
-  margin: 30px;
+  margin: 50px;
   font-weight: bold;
 }
-
-.scoreboard__container {
-  border: 3px solid black;
-  background-color: #FF9B71;
-  height: 140px;
-  width: 200px;
-  margin: 30px 100px;
+@media only screen and (min-width: 500px) {
+  .tic-tac-toe__instruction {
+    margin: 150px 50px 50px;
+  }
 }
 
-.scoreboard__header {
-  text-align: center;
-  font-size: 22px;
-  font-weight: lighter;
+.tic-tac-toe__instruction.hide {
+  display: none;
+}
+
+#section-1 {
+  height: 100vh;
+  width: 100vw;
 }
 
 .home__background-img {
@@ -153,7 +177,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   z-index: -1;
   opacity: 90%;

@@ -26,10 +26,16 @@
   }
 }
 
+.reset__btn-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .reset__btn {
   height: 30px;
   width: 90px;
-  margin: 20px 150px;
+  margin: 100px 150px 0;
   background-color: #820933;
   border: 2px solid black;
   font-size: 18px;

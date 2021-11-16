@@ -9,33 +9,71 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Raleway:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-  <title>Home: Tic-Tac-Toe</title>
+  <title>Tic-Tac-Toe</title>
 </head>
 
 <body>
   <!--Home Page-->
-  <div class="home__background-img"></div>
-  
-    <h1 class="home__header">Tic-Tac-Toe</h1>
-    <div class="player__container">
-      <div class="player__name-field-container">
-        <!--Player One Form Input-->
-        <label for="player-one-name" class="player__name" id="player__name-one">Player One:</label>
-        <input type="text" name="player-one-name" id="player-one-name" placeholder="Enter Your Name Here" class="player__name-field">
-        <!--Player Two Form Input-->
-        <label for="player-two-name" class="player__name" id="player__name-two">Player Two:</label>
-        <input type="text" name="player-two-name" id="player-two-name" placeholder="Enter Your Name Here" class="player__name-field">
-      </div>
-    </div>
-    <!--Instructions-->
-    <h3 class="home__instructions-header">Instructions</h3>
-    <p class="home__instructions-description">Play in turns and line up three “X’s” or “O’s” horizontally, vertically or diagonally on the grid to win a point. The first to win five points wins the game. Good luck!</p>
-    <div class="start__container">
-      <div class="start__btn-container">
-        <a href="game.html" class="start__btn">Start</a>
-      </div>
-    </div>
+  <div id="section-1">
+    <div class="home__background-img"></div>
     
+      <h1 class="home__header">Tic-Tac-Toe</h1>
+      <div class="player__container">
+        <div class="player__name-field-container">
+          <!--Player One Form Input-->
+          <label for="player-one-name" class="player__name" id="player__name-one">Player One:</label>
+          <input type="text" name="player-one-name" id="player-one-name" placeholder="Enter Your Name Here" class="player__name-field" data-input="1">
+          <!--Player Two Form Input-->
+          <label for="player-two-name" class="player__name" id="player__name-two">Player Two:</label>
+          <input type="text" name="player-two-name" id="player-two-name" placeholder="Enter Your Name Here" class="player__name-field" data-input="2">
+        </div>
+      </div>
+      <!--Instructions-->
+      <h3 class="home__instructions-header">Instructions</h3>
+      <p class="home__instructions-description">Play in turns and line up three “X’s” or “O’s” horizontally, vertically or diagonally on the grid to win the game. Good luck!</p>
+      <div class="start__container">
+        <div class="start__btn-container">
+          <a href="#section-2" class="start__btn">Start</a>
+        </div>
+      </div>
+  </div>
+  
+  <!--Game Page-->
+  <div id="section-2">
+    <div class="game__background-img"></div>
+  <div class="back-to-home__container">
+    <div class="back-to-home__btn-container">
+      <div class="back-to-home__arrow">&#8593;</div>
+      <a href="#section-1" class="back-to-home__btn">Back to Home Page</a>
+    </div>
+  </div>
+  <div class="tic-tac-toe__container">
+    <div class="tic-tac-toe__grid-container">
+      <section class="tic-tac-toe__grid">
+        <div class="tic-tac-toe__square" id="square-one" data-square="1"></div>
+        <div class="tic-tac-toe__square" id="square-two" data-square="2"></div>
+        <div class="tic-tac-toe__square" id="square-three" data-square="3"></div>
+        <div class="tic-tac-toe__square" id="square-four" data-square="4"></div>
+        <div class="tic-tac-toe__square" id="square-five" data-square="5"></div>
+        <div class="tic-tac-toe__square" id="square-six" data-square="6"></div>
+        <div class="tic-tac-toe__square" id="square-seven" data-square="7"></div>
+        <div class="tic-tac-toe__square" id="square-eight" data-square="8"></div>
+        <div class="tic-tac-toe__square" id="square-nine" data-square="9"></div>
+      </section>
+    </div>
+    <!--Instruction disappears when player one clicks any square in the grid and reappears on reset-->
+    <p class="tic-tac-toe__instruction">Click anywhere on the grid to start!</p>
+    <!-- <section class="scoreboard__container">
+      <h3 class="scoreboard__header">Scoreboard</h3>
+      fields will be filled in with player name that is entered on home page and will be updated with their score
+      <p class="player-name player-score" id="player-one"></p>
+      <p class="player-name player-score" id="player-two"></p>
+    </section> -->
+    <div class="reset__btn-container">
+      <button class="reset__btn">Reset</button>
+    </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 
