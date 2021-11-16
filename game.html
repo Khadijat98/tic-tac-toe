@@ -13,33 +13,37 @@
 </head>
 
 <body>
-  
-  <div class="back-to-home__btn-container">
-    <div class="back-to-home__arrow">&#8592;</div>
-    <a href="index.html" class="back-to-home__btn">Back to Home Page</a>
+  <div class="game__background-img"></div>
+  <div class="back-to-home__container">
+    <div class="back-to-home__btn-container">
+      <div class="back-to-home__arrow">&#8592;</div>
+      <a href="index.html" class="back-to-home__btn">Back to Home Page</a>
+    </div>
   </div>
   <div class="tic-tac-toe__container">
-    <section class="tic-tac-toe__grid">
-      <div class="tic-tac-toe__square" id="square-one"></div>
-      <div class="tic-tac-toe__square" id="square-two"></div>
-      <div class="tic-tac-toe__square" id="square-three"></div>
-      <div class="tic-tac-toe__square" id="square-four"></div>
-      <div class="tic-tac-toe__square" id="square-five"></div>
-      <div class="tic-tac-toe__square" id="square-six"></div>
-      <div class="tic-tac-toe__square" id="square-seven"></div>
-      <div class="tic-tac-toe__square" id="square-eight"></div>
-      <div class="tic-tac-toe__square" id="square-nine"></div>
+    <div class="tic-tac-toe__grid-container">
+      <section class="tic-tac-toe__grid">
+        <div class="tic-tac-toe__square" id="square-one"></div>
+        <div class="tic-tac-toe__square" id="square-two"></div>
+        <div class="tic-tac-toe__square" id="square-three"></div>
+        <div class="tic-tac-toe__square" id="square-four"></div>
+        <div class="tic-tac-toe__square" id="square-five"></div>
+        <div class="tic-tac-toe__square" id="square-six"></div>
+        <div class="tic-tac-toe__square" id="square-seven"></div>
+        <div class="tic-tac-toe__square" id="square-eight"></div>
+        <div class="tic-tac-toe__square" id="square-nine"></div>
+      </section>
+    </div>
+    <!--Instruction disappears when player one clicks any square in the grid and reappears on reset-->
+    <p class="tic-tac-toe__instruction">Click anywhere on the grid to start!</p>
+    <section class="scoreboard__container">
+      <h3 class="scoreboard__header">Scoreboard</h3>
+      <!--fields will be filled in with player name that is entered on home page and will be updated with their score-->
+      <p class="player-name player-score" id="player-one"></p>
+      <p class="player-name player-score" id="player-two"></p>
     </section>
+    <button class="reset__btn">Reset</button>
   </div>
-  <!--Instruction disappears when player one clicks any square in the grid and reappears on reset-->
-  <p class="tic-tac-toe__instruction">Click anywhere on the grid to start!</p>
-  <section class="scoreboard__container">
-    <h3 class="scoreboard__header">Scoreboard</h3>
-    <!--fields will be filled in with player name that is entered on home page and will be updated with their score-->
-    <p class="player-name player-score" id="player-one"></p>
-    <p class="player-name player-score" id="player-two"></p>
-  </section>
-  <button class="reset__btn">Reset</button>
   
   <script src="script.js"></script>
 </body>

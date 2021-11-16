@@ -1,8 +1,27 @@
+.game__background-img {
+  position: absolute;
+  background: url(assets/media/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 90%;
+
+}
+
 .tic-tac-toe__container {
+  display: grid;
+  justify-content: center;
+  height: 70vh;
+}
+
+.tic-tac-toe__grid-container {
   display: grid;
   align-items: center;
   justify-content: center;
-  margin: 50px;
+  margin: 90px 50px 70px;
  }
 
 .tic-tac-toe__grid {
@@ -15,6 +34,42 @@
 
 .tic-tac-toe__square {
   border: 3px solid black;
+}
+
+#square-one {
+  border-left: transparent;
+  border-top:transparent;
+}
+
+#square-two {
+  border-top: transparent;
+}
+
+#square-three {
+  border-top: transparent;
+  border-right: transparent;
+}
+
+#square-four {
+  border-left: transparent;
+}
+
+#square-six {
+  border-right: transparent;
+}
+
+#square-seven {
+  border-left: transparent;
+  border-bottom: transparent;
+}
+
+#square-eight {
+  border-bottom: transparent;
+}
+
+#square-nine {
+  border-right: transparent;
+  border-bottom: transparent;
 }
 
 .tic-tac-toe__instruction {

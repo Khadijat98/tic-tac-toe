@@ -1,10 +1,13 @@
+.back-to-home__container {
+  padding: 20px 20px 0px;
+}
+
 .back-to-home__btn-container {
   background-color: #FFFD82;
   height: 50px;
   width: 200px;
   border: 2px solid black;
   text-align: right;
-  margin: 30px;
   padding: 12px;
   display: flex;
 }
@@ -30,6 +33,12 @@
   color: white;
 }
 
+.start__container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
 .start__btn-container {
   background-color: #2AD331;
   height: 50px;
@@ -45,11 +54,29 @@
   font-size: 30px;
 }
 
+.game__background-img {
+  position: absolute;
+  background: url(assets/media/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  opacity: 90%;
+}
+
 .tic-tac-toe__container {
+  display: grid;
+  justify-content: center;
+  height: 70vh;
+}
+
+.tic-tac-toe__grid-container {
   display: grid;
   align-items: center;
   justify-content: center;
-  margin: 50px;
+  margin: 90px 50px 70px;
 }
 
 .tic-tac-toe__grid {
@@ -62,6 +89,42 @@
 
 .tic-tac-toe__square {
   border: 3px solid black;
+}
+
+#square-one {
+  border-left: transparent;
+  border-top: transparent;
+}
+
+#square-two {
+  border-top: transparent;
+}
+
+#square-three {
+  border-top: transparent;
+  border-right: transparent;
+}
+
+#square-four {
+  border-left: transparent;
+}
+
+#square-six {
+  border-right: transparent;
+}
+
+#square-seven {
+  border-left: transparent;
+  border-bottom: transparent;
+}
+
+#square-eight {
+  border-bottom: transparent;
+}
+
+#square-nine {
+  border-right: transparent;
+  border-bottom: transparent;
 }
 
 .tic-tac-toe__instruction {
@@ -86,13 +149,14 @@
 
 .home__background-img {
   position: absolute;
-  background: url(assets/media/home-background.jpg);
+  background: url(assets/media/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   width: 100%;
   height: 100vh;
   z-index: -1;
-  opacity: 60%;
+  opacity: 90%;
 }
 
 .home__header {
@@ -101,12 +165,19 @@
   padding: 150px 50px 50px;
 }
 
+.player__container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
 .player__name-field-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  justify-items: center;
+  gap: 16px;
   margin: 30px 50px;
   width: 290px;
 }
@@ -140,6 +211,16 @@
   text-align: center;
   margin: 20px;
   font-weight: bolder;
+}
+@media only screen and (min-width: 945px) {
+  .home__instructions-description {
+    margin: 20px 200px;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .home__instructions-description {
+    margin: 20px 400px;
+  }
 }
 
 .back-to-home__btn, .reset__btn, .tic-tac-toe__square, .scoreboard__header, .home__header, .home__instructions-header, .start__btn {
