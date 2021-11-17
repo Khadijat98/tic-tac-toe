@@ -22,10 +22,10 @@
         <div class="player__name-field-container">
           <!--Player One Form Input-->
           <label for="player-one-name" class="player__name" id="player__name-one">Player One:</label>
-          <input type="text" name="player-one-name" id="player-one-name" placeholder="Enter Your Name Here" class="player__name-field" data-input="1">
+          <input type="text" name="player-one-name" id="player-one-name" placeholder="Enter Your Name Here" class="player__name-field">
           <!--Player Two Form Input-->
           <label for="player-two-name" class="player__name" id="player__name-two">Player Two:</label>
-          <input type="text" name="player-two-name" id="player-two-name" placeholder="Enter Your Name Here" class="player__name-field" data-input="2">
+          <input type="text" name="player-two-name" id="player-two-name" placeholder="Enter Your Name Here" class="player__name-field">
         </div>
       </div>
       <!--Instructions-->
@@ -50,15 +50,15 @@
   <div class="tic-tac-toe__container">
     <div class="tic-tac-toe__grid-container">
       <section class="tic-tac-toe__grid">
-        <div class="tic-tac-toe__square" id="square-one" data-square="1"></div>
-        <div class="tic-tac-toe__square" id="square-two" data-square="2"></div>
-        <div class="tic-tac-toe__square" id="square-three" data-square="3"></div>
-        <div class="tic-tac-toe__square" id="square-four" data-square="4"></div>
-        <div class="tic-tac-toe__square" id="square-five" data-square="5"></div>
-        <div class="tic-tac-toe__square" id="square-six" data-square="6"></div>
-        <div class="tic-tac-toe__square" id="square-seven" data-square="7"></div>
-        <div class="tic-tac-toe__square" id="square-eight" data-square="8"></div>
-        <div class="tic-tac-toe__square" id="square-nine" data-square="9"></div>
+        <div class="tic-tac-toe__square win-one win-two win-three" id="square-one"></div>
+        <div class="tic-tac-toe__square win-one win-four" id="square-two"></div>
+        <div class="tic-tac-toe__square win-one win-five win-six" id="square-three"></div>
+        <div class="tic-tac-toe__square win-two win-seven" id="square-four"></div>
+        <div class="tic-tac-toe__square win-three win-four win-five win-seven" id="square-five"></div>
+        <div class="tic-tac-toe__square win-six win-seven" id="square-six"></div>
+        <div class="tic-tac-toe__square win-two win-five win-eight" id="square-seven"></div>
+        <div class="tic-tac-toe__square win-four win-eight" id="square-eight"></div>
+        <div class="tic-tac-toe__square win-three win-six win-eight" id="square-nine"></div>
       </section>
     </div>
     <!--Instruction disappears when player one clicks any square in the grid and reappears on reset-->
