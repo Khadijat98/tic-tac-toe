@@ -1,26 +1,22 @@
-.back-to-home__container {
-  padding: 20px 20px 0px;
-}
-
 .back-to-home__btn-container {
-  background-color: #FFFD82;
-  height: 50px;
-  width: 200px;
-  border: 2px solid black;
-  text-align: right;
-  padding: 12px;
-  display: flex;
-}
-.back-to-home__btn-container .back-to-home__arrow {
-  font-size: 30px;
-  font-weight: bold;
-  line-height: 20px;
+  padding: 20px 20px 0px;
 }
 .back-to-home__btn-container .back-to-home__btn {
   text-decoration: none;
   color: black;
   font-size: 20px;
   padding-left: 5px;
+  background-color: #FFFD82;
+  box-shadow: 0px 1px #868530, 1px 2px #868530, 2px 3px #868530, 3px 4px #868530, 5px 6px black;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 5px;
+  text-align: right;
+  padding: 12px;
+  height: 50px;
+}
+.back-to-home__btn-container .back-to-home__btn:hover {
+  background-color: #fffb25;
 }
 
 .reset__btn-container {
@@ -29,45 +25,56 @@
   justify-content: center;
   align-items: center;
 }
-
-.reset__btn {
+.reset__btn-container .reset__btn {
   height: 30px;
   width: 90px;
   margin: 100px 150px 0;
+  text-align: center;
   background-color: #820933;
+  box-shadow: 0px 1px #4d051e, 1px 2px #4d051e, 2px 3px #4d051e, 3px 4px #4d051e, 5px 6px black;
   border: 2px solid black;
+  border-radius: 5px;
   font-size: 18px;
   color: white;
 }
+.reset__btn-container .reset__btn:hover {
+  background-color: #c41250;
+  cursor: pointer;
+}
 
-.start__container {
+.start__btn-container {
   display: grid;
   justify-content: center;
   align-items: center;
 }
-
-.start__btn-container {
-  background-color: #2AD331;
+.start__btn-container .start__btn {
   height: 50px;
-  width: 100px;
-  border: 2px solid black;
-  box-shadow: 0px 0px 1px #075e0a, 0px 1px 2px #075e0a, 0px 2px 3px #075e0a;
-  text-align: center;
   margin: 50px 150px;
-}
-
-.start__btn {
   text-decoration: none;
   color: black;
   font-size: 30px;
+  box-shadow: 0px 1px #075e0a, 1px 2px #075e0a, 2px 3px #075e0a, 3px 4px #075e0a, 5px 6px black;
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #2AD331;
+  text-align: center;
+  padding: 5px 10px;
+}
+.start__btn-container .start__btn:hover {
+  background-color: #14f81b;
+}
+
+.back-to-home__btn:active, .reset__btn:active, .start__btn:active {
+  box-shadow: 1px 1px black;
+  transform: translate(1px, 2px);
 }
 
 #section-2 {
   height: 100vh;
   width: 100vw;
 }
-
-.game__background-img {
+#section-2 .game__background-img {
   position: absolute;
   background: url(assets/media/background.jpg);
   background-size: cover;
@@ -78,21 +85,18 @@
   z-index: -1;
   opacity: 90%;
 }
-
-.tic-tac-toe__container {
+#section-2 .tic-tac-toe__container {
   display: grid;
   justify-content: center;
   height: 70vh;
 }
-
-.tic-tac-toe__grid-container {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container {
   display: grid;
   align-items: center;
   justify-content: center;
   margin: 90px 50px 70px;
 }
-
-.tic-tac-toe__grid {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid {
   height: 300px;
   width: 300px;
   display: grid;
@@ -100,8 +104,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-columns: repeat(3, 1fr);
 }
-
-.tic-tac-toe__square {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid .tic-tac-toe__square {
   border: 3px solid black;
   text-align: center;
   font-size: 70px;
@@ -109,61 +112,57 @@
   width: 100px;
 }
 @media only screen and (min-width: 500px) {
-  .tic-tac-toe__square {
+  #section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid .tic-tac-toe__square {
     height: 150px;
     width: 150px;
     font-size: 100px;
   }
 }
-
-#square-one {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid .win-one.player-one__wins, #section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid .win-two.player-one__wins, #section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid .win-three.player-one__wins {
+  background-color: #FF540A;
+}
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid .win-one.player-two__wins, #section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid .win-two.player-two__wins, #section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid .win-three.player-two__wins {
+  background-color: #26FFE6;
+}
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid #square-one {
   border-left: transparent;
   border-top: transparent;
 }
-
-#square-two {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid #square-two {
   border-top: transparent;
 }
-
-#square-three {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid #square-three {
   border-top: transparent;
   border-right: transparent;
 }
-
-#square-four {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid #square-four {
   border-left: transparent;
 }
-
-#square-six {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid #square-six {
   border-right: transparent;
 }
-
-#square-seven {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid #square-seven {
   border-left: transparent;
   border-bottom: transparent;
 }
-
-#square-eight {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid #square-eight {
   border-bottom: transparent;
 }
-
-#square-nine {
+#section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid #square-nine {
   border-right: transparent;
   border-bottom: transparent;
 }
-
-.tic-tac-toe__instruction {
+#section-2 .tic-tac-toe__container .tic-tac-toe__instruction {
   text-align: center;
   margin: 50px;
   font-weight: bold;
 }
 @media only screen and (min-width: 500px) {
-  .tic-tac-toe__instruction {
+  #section-2 .tic-tac-toe__container .tic-tac-toe__instruction {
     margin: 150px 50px 50px;
   }
 }
-
-.tic-tac-toe__instruction.hide {
+#section-2 .tic-tac-toe__container .tic-tac-toe__instruction.hide {
   display: none;
 }
 
@@ -171,8 +170,7 @@
   height: 100vh;
   width: 100vw;
 }
-
-.home__background-img {
+#section-1 .home__background-img {
   position: absolute;
   background: url(assets/media/background.jpg);
   background-size: cover;
@@ -183,20 +181,17 @@
   z-index: -1;
   opacity: 90%;
 }
-
-.home__header {
+#section-1 .home__header {
   font-size: 64px;
   text-align: center;
   padding: 150px 50px 50px;
 }
-
-.player__container {
+#section-1 .player__container {
   display: grid;
   justify-content: center;
   align-items: center;
 }
-
-.player__name-field-container {
+#section-1 .player__name-field-container {
   display: grid;
   grid-template-columns: 1fr 2fr;
   justify-content: center;
@@ -206,44 +201,42 @@
   margin: 30px 50px;
   width: 290px;
 }
-.player__name-field-container .player__name {
+#section-1 .player__name-field-container .player__name {
   font-weight: bold;
   font-size: 16px;
   align-self: center;
   border: 1px solid black;
   padding: 5px 1px;
 }
-.player__name-field-container #player__name-one {
+#section-1 .player__name-field-container #player__name-one {
   background-color: #FF540A;
 }
-.player__name-field-container #player__name-two {
+#section-1 .player__name-field-container #player__name-two {
   background-color: #26FFE6;
 }
-.player__name-field-container .player__name-field {
+#section-1 .player__name-field-container .player__name-field {
   height: 30px;
   align-self: center;
   font-size: 14px;
   padding: 10px 0px;
 }
-
-.home__instructions-header {
+#section-1 .home__instructions-header {
   text-align: center;
   margin: 40px;
   font-size: 30px;
 }
-
-.home__instructions-description {
+#section-1 .home__instructions-description {
   text-align: center;
   margin: 20px;
   font-weight: bolder;
 }
 @media only screen and (min-width: 945px) {
-  .home__instructions-description {
+  #section-1 .home__instructions-description {
     margin: 20px 200px;
   }
 }
 @media only screen and (min-width: 1300px) {
-  .home__instructions-description {
+  #section-1 .home__instructions-description {
     margin: 20px 400px;
   }
 }

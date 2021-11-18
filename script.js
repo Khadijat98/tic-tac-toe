@@ -12,57 +12,51 @@ const winningPatternFive = document.querySelectorAll(".win-five");
 const winningPatternSix = document.querySelectorAll(".win-six");
 const winningPatternSeven = document.querySelectorAll(".win-seven");
 const winningPatternEight = document.querySelectorAll(".win-eight");
-const sectionTwo = document.querySelector("#section-2");
+const resetGame = document.querySelector(".reset__btn");
+const backtoHome = document.querySelector(".back-to-home__btn");
 
 
-// Home
-// Players enter name - need to identify which box is attached to which player. Need this to:
-  // tell player one by name to click the grid to start
-  // assign noughts and crosses to the players
-  // to drop banners congratulating the players after they win the game
+// global variables for players
+let playerOne;
+let playerTwo;
+let playerOneTurn = true;
 
-
-  // global variables for players
-  let playerOne;
-  let playerTwo;
-  let playerOneTurn = true;
-
-  // players enter name and this saves when a user clicks start
-  const handleClick = () => {
-    playerOne = playerOneName.value
+// players enter name and this saves when a user clicks start
+const handleClick = () => {
+  playerOne = playerOneName.value
+  console.log(playerOne)
+  playerTwo = playerTwoName.value
+  console.log(playerTwo)
+  if (playerOne == "" || playerTwo == "" ) { 
     console.log(playerOne)
-    playerTwo = playerTwoName.value
-    console.log(playerTwo)
-    if (playerOne == "" || playerTwo == "" ) { 
-      console.log(playerOne)
-      alert("Please enter your names!")
-    }
+    alert("Please enter your names!")
   }
-  startGame.addEventListener("click", handleClick); // how do i make this not run after the user clicks "ok" on the alert box?
+}
+startGame.addEventListener("click", handleClick); // how do i make this not run after the user clicks "ok" on the alert box?
 
-  // assign noughts to player one and crosses to player two
-  // need to fill the grid with noughts when player one clicks a square and with crosses when it's player two
-  // as soon as player one clicks a square, the "click anywhere on the grid to start text" disappears
-  ticTacToeSquares.forEach((square) => {
-    square.addEventListener("click", (event) => {
-      ticTacToeInstruction.classList.add("hide")
-      if (playerOneTurn) {
-        event.target.innerHTML = "O"
-        playerOneTurn = false;
-      } else {
-        event.target.innerHTML = "X"
-        playerOneTurn = true;
-      }
-      checkPatternOne();
-      checkPatternTwo();
-      checkPatternThree();
-      checkPatternFour();
-      checkPatternFive();
-      checkPatternSix();
-      checkPatternSeven();
-      checkPatternEight();
-    })
+// assign noughts to player one and crosses to player two
+// need to fill the grid with noughts when player one clicks a square and with crosses when it's player two
+// as soon as player one clicks a square, the "click anywhere on the grid to start text" disappears
+ticTacToeSquares.forEach((square) => {
+  square.addEventListener("click", (event) => {
+    ticTacToeInstruction.classList.add("hide")
+    if (playerOneTurn) {
+      event.target.innerHTML = "O"
+      playerOneTurn = false;
+    } else {
+      event.target.innerHTML = "X"
+      playerOneTurn = true;
+    }
+    checkPatternOne();
+    checkPatternTwo();
+    checkPatternThree();
+    checkPatternFour();
+    checkPatternFive();
+    checkPatternSix();
+    checkPatternSeven();
+    checkPatternEight();
   })
+})
 
 // need to identify when there's a winning pattern - vertical, horizontal or diagonal
 // need the computer to be aware of all the possible winning combinations
@@ -81,125 +75,167 @@ const sectionTwo = document.querySelector("#section-2");
 //   [4, 5, 6] //patternSeven
 //   [7, 8, 9] //patternEight
 
-  const checkPatternOne = () => {
-    let patternOneCombo = "";
+const checkPatternOne = () => {
+  let patternOneCombo = "";
+  winningPatternOne.forEach((patternOne) => {
+    patternOneCombo += patternOne.innerHTML;   
+  })
+  if (patternOneCombo == "OOO") {
+    alert(`${playerOne} wins the game! Congratulations!!`)
     winningPatternOne.forEach((patternOne) => {
-      console.dir(patternOne)
-      patternOneCombo += patternOne.innerHTML;   
+      patternOne.classList.add("player-one__wins")   
     })
-    console.log(patternOneCombo)
-    if (patternOneCombo == "O"+"O"+"O") {
-      console.log("player one wins")
-      alert(`${playerOne} wins the game! Congratulations!!`)
-      // sectionTwo.addEventListener("click", () => {
-        
-      // })
-     } else if (patternOneCombo == "X"+"X"+"X") {
-       console.log("player two wins")
-       setTimeout = () => {alert(`${playerTwo} wins the game! Congratulations!!`), 2000}
-     }
-  }
-  
-  const checkPatternTwo = () => {
-    let patternTwoCombo = "";
+    alert("Click reset to play again!")
+    }
+    else if (patternOneCombo == "XXX") {
+      setTimeout = () => {alert(`${playerTwo} wins the game! Congratulations!!`), 2000} // why doesn't this work?
+      winningPatternOne.forEach((patternOne) => {
+      patternOne.classList.add("player-two__wins")   
+    })
+      alert("Click reset to play again!")
+    }
+}
+
+const checkPatternTwo = () => {
+  let patternTwoCombo = "";
+  winningPatternTwo.forEach((patternTwo) => {
+    patternTwoCombo += patternTwo.innerHTML;   
+  })
+  if (patternTwoCombo == "OOO") {
+    alert(`${playerOne} wins the game! Congratulations!!`)
     winningPatternTwo.forEach((patternTwo) => {
-      console.dir(patternTwo)
-      patternTwoCombo += patternTwo.innerHTML;   
+      patternTwo.classList.add("player-one__wins")   
     })
-    console.log(patternTwoCombo)
-    if (patternTwoCombo == "O"+"O"+"O") {
-      console.log("player one wins")
-     } else if (patternTwoCombo == "X"+"X"+"X") {
-       console.log("player two wins")
-     }
-  }
+    alert("Click reset to play again!")
+    } else if (patternTwoCombo == "XXX") {
+      alert(`${playerTwo} wins the game! Congratulations!!`)
+      winningPatternTwo.forEach((patternTwo) => {
+        patternTwo.classList.add("player-two__wins")   
+      })
+        alert("Click reset to play again!")
+    }
+}
 
-  const checkPatternThree = () => {
-    let patternThreeCombo = "";
+const checkPatternThree = () => {
+  let patternThreeCombo = "";
+  winningPatternThree.forEach((patternThree) => {
+    patternThreeCombo += patternThree.innerHTML;   
+  })
+  if (patternThreeCombo == "OOO") {
+    alert(`${playerOne} wins the game! Congratulations!!`)
     winningPatternThree.forEach((patternThree) => {
-      console.dir(patternThree)
-      patternThreeCombo += patternThree.innerHTML;   
+      patternThree.classList.add("player-one__wins")   
     })
-    console.log(patternThreeCombo)
-    if (patternThreeCombo == "O"+"O"+"O") {
-      console.log("player one wins")
-     } else if (patternThreeCombo == "X"+"X"+"X") {
-       console.log("player two wins")
-     }
-  }
-  
-  const checkPatternFour = () => {
-    let patternFourCombo = "";
-    winningPatternFour.forEach((patternFour) => {
-      console.dir(patternFour)
-      patternFourCombo += patternFour.innerHTML;   
-    })
-    console.log(patternFourCombo)
-    if (patternFourCombo == "O"+"O"+"O") {
-      console.log("player one wins")
-     } else if (patternFourCombo == "X"+"X"+"X") {
-       console.log("player two wins")
-     }
-  }
+    alert("Click reset to play again!")
+    } else if (patternThreeCombo == "XXX") {
+      alert(`${playerTwo} wins the game! Congratulations!!`)
+      winningPatternThree.forEach((patternThree) => {
+        patternThree.classList.add("player-two__wins")   
+      })
+        alert("Click reset to play again!")
+    }
+}
 
-  const checkPatternFive = () => {
-    let patternFiveCombo = "";
-    winningPatternFive.forEach((patternFive) => {
-      console.dir(patternFive)
-      patternFiveCombo += patternFive.innerHTML;   
-    })
-    console.log(patternFiveCombo)
-    if (patternFiveCombo == "O"+"O"+"O") {
-      console.log("player one wins")
-     } else if (patternFiveCombo == "X"+"X"+"X") {
-       console.log("player two wins")
-     }
-  }
+// add colours to everything below
+const checkPatternFour = () => {
+  let patternFourCombo = "";
+  winningPatternFour.forEach((patternFour) => {
+    patternFourCombo += patternFour.innerHTML;   
+  })
+  console.log(patternFourCombo)
+  if (patternFourCombo == "O"+"O"+"O") {
+    alert(`${playerOne} wins the game! Congratulations!!`)
+    location.reload();
+    } else if (patternFourCombo == "X"+"X"+"X") {
+      alert(`${playerOne} wins the game! Congratulations!!`)
+      location.reload();
+    }
+}
 
-  const checkPatternSix = () => {
-    let patternSixCombo = "";
-    winningPatternSix.forEach((patternSix) => {
-      console.dir(patternSix)
-      patternSixCombo += patternSix.innerHTML;   
-    })
-    console.log(patternSixCombo)
-    if (patternSixCombo == "O"+"O"+"O") {
-      console.log("player one wins")
-     } else if (patternSixCombo == "X"+"X"+"X") {
-       console.log("player two wins")
-     }
-  }
+const checkPatternFive = () => {
+  let patternFiveCombo = "";
+  winningPatternFive.forEach((patternFive) => {
+    console.dir(patternFive)
+    patternFiveCombo += patternFive.innerHTML;   
+  })
+  console.log(patternFiveCombo)
+  if (patternFiveCombo == "O"+"O"+"O") {
+    console.log("player one wins")
+    alert(`${playerOne} wins the game! Congratulations!!`)
+    location.reload();
+    } else if (patternFiveCombo == "X"+"X"+"X") {
+      console.log("player two wins")
+      alert(`${playerOne} wins the game! Congratulations!!`)
+      location.reload();
+    }
+}
 
-  const checkPatternSeven = () => {
-    let patternSevenCombo = "";
-    winningPatternSeven.forEach((patternSeven) => {
-      console.dir(patternSeven)
-      patternSevenCombo += patternSeven.innerHTML;   
-    })
-    console.log(patternSevenCombo)
-    if (patternSevenCombo == "O"+"O"+"O") {
-      console.log("player one wins")
-     } else if (patternSevenCombo == "X"+"X"+"X") {
-       console.log("player two wins")
-     }
-  }
+const checkPatternSix = () => {
+  let patternSixCombo = "";
+  winningPatternSix.forEach((patternSix) => {
+    console.dir(patternSix)
+    patternSixCombo += patternSix.innerHTML;   
+  })
+  console.log(patternSixCombo)
+  if (patternSixCombo == "O"+"O"+"O") {
+    console.log("player one wins")
+    alert(`${playerOne} wins the game! Congratulations!!`)
+    location.reload();
+    } else if (patternSixCombo == "X"+"X"+"X") {
+      console.log("player two wins")
+      alert(`${playerOne} wins the game! Congratulations!!`)
+      location.reload();
+    }
+}
 
-  const checkPatternEight = () => {
-    let patternEightCombo = "";
-    winningPatternEight.forEach((patternEight) => {
-      console.dir(patternEight)
-      patternEightCombo += patternEight.innerHTML;   
-    })
-    console.log(patternEightCombo)
-    if (patternEightCombo == "O"+"O"+"O") {
-      console.log("player one wins")
-     } else if (patternEightCombo == "X"+"X"+"X") {
-       console.log("player two wins")
-     }
-  }
-  
-  
-  
+const checkPatternSeven = () => {
+  let patternSevenCombo = "";
+  winningPatternSeven.forEach((patternSeven) => {
+    console.dir(patternSeven)
+    patternSevenCombo += patternSeven.innerHTML;   
+  })
+  console.log(patternSevenCombo)
+  if (patternSevenCombo == "O"+"O"+"O") {
+    console.log("player one wins")
+    alert(`${playerOne} wins the game! Congratulations!!`)
+    location.reload();
+    } else if (patternSevenCombo == "X"+"X"+"X") {
+      console.log("player two wins")
+      alert(`${playerOne} wins the game! Congratulations!!`)
+      location.reload();
+    }
+}
+
+const checkPatternEight = () => {
+  let patternEightCombo = "";
+  winningPatternEight.forEach((patternEight) => {
+    console.dir(patternEight)
+    patternEightCombo += patternEight.innerHTML;   
+  })
+  console.log(patternEightCombo)
+  if (patternEightCombo == "O"+"O"+"O") {
+    console.log("player one wins")
+    alert(`${playerOne} wins the game! Congratulations!!`)
+    location.reload();
+    } else if (patternEightCombo == "X"+"X"+"X") {
+      console.log("player two wins")
+      alert(`${playerOne} wins the game! Congratulations!!`)
+      location.reload();
+    }
+}
+
+const checkDraw = () => {
+
+}
+
+resetGame.addEventListener("click", () => {
+  location.reload();
+})
+
+backtoHome.addEventListener("click", () => {
+  location.reload();
+})
+
 
     
   
