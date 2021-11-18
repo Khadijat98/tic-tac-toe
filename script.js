@@ -56,6 +56,7 @@ ticTacToeSquares.forEach((square) => {
     checkPatternSix();
     checkPatternSeven();
     checkPatternEight();
+    checkDraw();
   })
 })
 
@@ -229,11 +230,17 @@ const checkPatternEight = () => {
 }
 
 const checkDraw = () => {
+  console.log("bye")
+  let fullGrid = "";
   ticTacToeSquares.forEach((square) => {
-    let fullGrid = "";
+    
     fullGrid += square.innerHTML;
-    console.log(draw)
+    //console.log(square.innerHTML)
   })
+  if (fullGrid.length === 9) {
+    console.log("draw")
+  }
+  console.log(fullGrid)
 }
 
 // winning banner functions
@@ -249,13 +256,23 @@ const displayWinBannerTwo = () => {
 
 // when the player presses the reset button, progress is cleared and the game starts again. the "click anywhere" text reappears
 resetGame.addEventListener("click", () => { // is there a way to clear the grid without doing a location reload?
-  // location.reload();
-  for (let i = 0; i <= 9; i++) {
-
-  }
   ticTacToeSquares.forEach((square) => {
     square.innerHTML = "";
   })
+  const playerOneWins = document.querySelectorAll(".player-one__wins")
+  const playerTwoWins = document.querySelectorAll(".player-two__wins")
+
+  for (let i = 0; i < playerOneWins.length; i ++) {
+    playerOneWins[i].classList.remove("player-one__wins");
+  }
+
+  for (let i = 0; i < playerTwoWins.length; i ++) {
+    playerTwoWins[i].classList.remove("player-two__wins");
+  }
+  
+  displayBannerOne.classList.remove("show")
+
+  displayBannerTwo.classList.remove("show")
 })
 
 // when the player presses back to the homepage, the game resets
