@@ -111,7 +111,7 @@
     }
   }
 
-  .display-banner-one, #display-banner-two {
+  .display-banner-one, #display-banner-two, .display-banner-draw {
     height: 100px;
     width: 100%;
     padding: 0px 10px;
@@ -124,7 +124,7 @@
     }
   }
 
-  .display-banner-one.show, #display-banner-two.show {
+  .display-banner-one.show, #display-banner-two.show, .display-banner-draw.show {
     display: block;
     text-align: center;
     font-size: 30px;

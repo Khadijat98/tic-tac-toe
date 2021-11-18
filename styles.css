@@ -169,7 +169,7 @@
 #section-2 .tic-tac-toe__container .tic-tac-toe__instruction.hide {
   display: none;
 }
-#section-2 .display-banner-one, #section-2 #display-banner-two {
+#section-2 .display-banner-one, #section-2 #display-banner-two, #section-2 .display-banner-draw {
   height: 100px;
   width: 100%;
   padding: 0px 10px;
@@ -178,11 +178,11 @@
   display: none;
 }
 @media only screen and (min-width: 500px) {
-  #section-2 .display-banner-one, #section-2 #display-banner-two {
+  #section-2 .display-banner-one, #section-2 #display-banner-two, #section-2 .display-banner-draw {
     margin-top: 100px;
   }
 }
-#section-2 .display-banner-one.show, #section-2 #display-banner-two.show {
+#section-2 .display-banner-one.show, #section-2 #display-banner-two.show, #section-2 .display-banner-draw.show {
   display: block;
   text-align: center;
   font-size: 30px;
@@ -190,7 +190,7 @@
   padding-top: 18px;
 }
 @media only screen and (min-width: 500px) {
-  #section-2 .display-banner-one.show, #section-2 #display-banner-two.show {
+  #section-2 .display-banner-one.show, #section-2 #display-banner-two.show, #section-2 .display-banner-draw.show {
     width: 100vw;
   }
 }
@@ -236,7 +236,7 @@
   }
 }
 
-.back-to-home__btn, .reset__btn, .tic-tac-toe__square, .scoreboard__header, .home__header, .home__instructions-header, .start__btn, .display-banner-one.show {
+.back-to-home__btn, .reset__btn, .tic-tac-toe__square, .scoreboard__header, .home__header, .home__instructions-header, .start__btn, .display-banner-one.show, #display-banner-two.show {
   font-family: "Caveat Brush", cursive;
 }
 

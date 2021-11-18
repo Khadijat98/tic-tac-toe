@@ -14,6 +14,7 @@ const winningPatternSeven = document.querySelectorAll(".win-seven");
 const winningPatternEight = document.querySelectorAll(".win-eight");
 const displayBannerOne = document.querySelector(".display-banner-one");
 const displayBannerTwo = document.querySelector("#display-banner-two");
+const displayBannerDraw = document.querySelector(".display-banner-draw");
 const resetGame = document.querySelector(".reset__btn");
 const backtoHome = document.querySelector(".back-to-home__btn");
 
@@ -32,12 +33,11 @@ let playerOneTurn = true;
 //   if (playerOne == "" || playerTwo == "" ) { 
 //     alert("Please enter your names!")
 //   }
+    // window.scrollByPages(1)
 // }
 // startGame.addEventListener("click", handleClick); // how do i make this not run after the user clicks "ok" on the alert box?
 
-// assign noughts to player one and crosses to player two
-// need to fill the grid with noughts when player one clicks a square and with crosses when it's player two
-// as soon as player one clicks a square, the "click anywhere on the grid to start text" disappears
+// Main Function - Calls the functions which check for winning patterns or a draw
 ticTacToeSquares.forEach((square) => {
   square.addEventListener("click", (event) => {
     ticTacToeInstruction.classList.add("hide")
@@ -60,25 +60,7 @@ ticTacToeSquares.forEach((square) => {
   })
 })
 
-// need to identify when there's a winning pattern - vertical, horizontal or diagonal
-// need the computer to be aware of all the possible winning combinations
-// need the computer to determine if noughts are in the winning combo of squares or crosses
-// need the computer to identify if player one wins or player two
-// need to make the computer tell the players who wins - add orange line for player one and turquoise line for player two and display banner
-// display banner
-  //create a p tag in section 2 with a background, height and width that only displays after the player wins and disappears when the player clicks the page
-// need to reset after a winning pattern has been achieved
-// also need to consider the case of no-one winning i.e. a full grid and reset after this
-// Winning patterns
-//   [1, 2, 3] //patternOne
-//   [1, 4, 7] //patternTwo
-//   [1, 5, 9] //patternThree
-//   [2, 5, 8] //patternFour
-//   [3, 5, 7] //patternFive
-//   [3, 6, 9] //patternSix
-//   [4, 5, 6] //patternSeven
-//   [7, 8, 9] //patternEight
-
+// Function for Winning Pattern One - [1, 2, 3]
 const checkPatternOne = () => {
   let patternOneCombo = "";
   winningPatternOne.forEach((patternOne) => {
@@ -97,10 +79,7 @@ const checkPatternOne = () => {
     }
 }
 
-const winningPattern = (winningPatternOne, winningPatternTwo) => {
-  
-}
-
+// Function for Winning Pattern Two - [1, 4, 7]
 const checkPatternTwo = () => {
   let patternTwoCombo = "";
   winningPatternTwo.forEach((patternTwo) => {
@@ -119,6 +98,7 @@ const checkPatternTwo = () => {
     }
 }
 
+// Function for Winning Pattern Three - [1, 5, 9]
 const checkPatternThree = () => {
   let patternThreeCombo = "";
   winningPatternThree.forEach((patternThree) => {
@@ -137,7 +117,7 @@ const checkPatternThree = () => {
     }
 }
 
-
+// Function for Winning Pattern Four - [2, 5, 8]
 const checkPatternFour = () => {
   let patternFourCombo = "";
   winningPatternFour.forEach((patternFour) => {
@@ -156,7 +136,7 @@ const checkPatternFour = () => {
     }
 }
 
-
+// Function for Winning Pattern Five - [3, 5, 7]
 const checkPatternFive = () => {
   let patternFiveCombo = "";
   winningPatternFive.forEach((patternFive) => {
@@ -175,6 +155,7 @@ const checkPatternFive = () => {
     }
 }
 
+// Function for Winning Pattern Six - [3, 6, 9]
 const checkPatternSix = () => {
   let patternSixCombo = "";
   winningPatternSix.forEach((patternSix) => {
@@ -193,6 +174,7 @@ const checkPatternSix = () => {
     }
 }
 
+// Function for Winning Pattern Seven - [4, 5, 6]
 const checkPatternSeven = () => {
   let patternSevenCombo = "";
   winningPatternSeven.forEach((patternSeven) => {
@@ -211,6 +193,7 @@ const checkPatternSeven = () => {
     }
 }
 
+// Function for Winning Pattern Eight - [7, 8, 9]
 const checkPatternEight = () => {
   let patternEightCombo = "";
   winningPatternEight.forEach((patternEight) => {
@@ -229,21 +212,18 @@ const checkPatternEight = () => {
     }
 }
 
+// Draw Function
 const checkDraw = () => {
-  console.log("bye")
   let fullGrid = "";
   ticTacToeSquares.forEach((square) => {
-    
     fullGrid += square.innerHTML;
-    //console.log(square.innerHTML)
   })
-  if (fullGrid.length === 9) {
-    console.log("draw")
+  if (fullGrid.length === 9) { 
+    displayDrawBanner();
   }
-  console.log(fullGrid)
 }
 
-// winning banner functions
+// Banner Functions - Player One Wins/Player Two Wins/Draw
 const displayWinBannerOne = () => {
  displayBannerOne.innerHTML = "Player One wins the game! Click reset to play again!"
  displayBannerOne.classList.add("show")
@@ -254,8 +234,13 @@ const displayWinBannerTwo = () => {
   displayBannerTwo.classList.add("show")
  }
 
-// when the player presses the reset button, progress is cleared and the game starts again. the "click anywhere" text reappears
-resetGame.addEventListener("click", () => { // is there a way to clear the grid without doing a location reload?
+const displayDrawBanner = () => {
+  displayBannerDraw.innerHTML = "It's a draw! Click reset to play again!"
+  displayBannerDraw.classList.add("show")
+}
+
+// Reset Function
+resetGame.addEventListener("click", () => { 
   ticTacToeSquares.forEach((square) => {
     square.innerHTML = "";
   })
@@ -273,9 +258,11 @@ resetGame.addEventListener("click", () => { // is there a way to clear the grid 
   displayBannerOne.classList.remove("show")
 
   displayBannerTwo.classList.remove("show")
+
+  playerOneTurn = true;
 })
 
-// when the player presses back to the homepage, the game resets
+// Return to Homepage Function
 backtoHome.addEventListener("click", () => {
   location.reload();
 })
