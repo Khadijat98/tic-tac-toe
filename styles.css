@@ -60,6 +60,7 @@
   background-color: #2AD331;
   text-align: center;
   padding: 5px 10px;
+  cursor: pointer;
 }
 .start__btn-container .start__btn:hover {
   background-color: #14f81b;
@@ -110,6 +111,7 @@
   font-size: 70px;
   height: 100px;
   width: 100px;
+  cursor: pointer;
 }
 @media only screen and (min-width: 500px) {
   #section-2 .tic-tac-toe__container .tic-tac-toe__grid-container .tic-tac-toe__grid .tic-tac-toe__square {

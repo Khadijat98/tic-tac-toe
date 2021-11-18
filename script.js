@@ -257,6 +257,8 @@ resetGame.addEventListener("click", () => {
   displayBannerOne.classList.remove("show")
   displayBannerTwo.classList.remove("show")
 
+  ticTacToeInstruction.classList.remove("hide")
+
   playerOneTurn = true;
 })
 
