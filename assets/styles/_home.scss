@@ -20,45 +20,45 @@
     padding: 150px 50px 50px;
   }
   
-  // .player__container {
-  //   display: grid;
-  //   justify-content: center;
-  //   align-items: center;
-  // }
-  // .player__name-field-container {
-  //   display: grid;
-  //   grid-template-columns: 1fr 2fr;
-  //   justify-content: center;
-  //   align-items: center;
-  //   justify-items: center;
-  //   gap: 16px;
-  //   margin: 30px 50px;
-  //   width: 290px;
+  .player__container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  }
+  .player__name-field-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    gap: 16px;
+    margin: 30px 50px;
+    width: 290px;
   
   
-  //   .player__name {
-  //     font-weight: bold;
-  //     font-size: 16px;
-  //     align-self: center;
-  //     border: 1px solid black;
-  //     padding: 5px 1px;
-  //   }
+    .player__name {
+      font-weight: bold;
+      font-size: 16px;
+      align-self: center;
+      border: 1px solid black;
+      padding: 5px 1px;
+    }
   
-  //   #player__name-one {
-  //     background-color: #FF540A;
-  //   }
+    #player__name-one {
+      background-color: #FF540A;
+    }
   
-  //   #player__name-two {
-  //     background-color: #26FFE6;
-  //   }
+    #player__name-two {
+      background-color: #26FFE6;
+    }
   
-  //   .player__name-field {
-  //     height: 30px;
-  //     align-self: center;
-  //     font-size: 14px;
-  //     padding: 10px 0px;
-  //   }
-  // }
+    .player__name-field {
+      height: 30px;
+      align-self: center;
+      font-size: 14px;
+      padding: 10px 0px;
+    }
+  }
   
   .home__instructions-header {
     text-align: center;

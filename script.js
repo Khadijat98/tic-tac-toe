@@ -1,4 +1,4 @@
-// Query selectors
+// Query Selectors
 const playerOneName = document.querySelector("#player-one-name");
 const playerTwoName = document.querySelector("#player-two-name");
 const startGame = document.querySelector(".start__btn");
@@ -18,24 +18,22 @@ const displayBannerDraw = document.querySelector(".display-banner-draw");
 const resetGame = document.querySelector(".reset__btn");
 const backtoHome = document.querySelector(".back-to-home__btn");
 
-
-// global variables for players
+// Global Variables
 let playerOne;
 let playerTwo;
 let playerOneTurn = true;
 
-// players enter name and this saves when a user clicks start
-// const handleClick = () => {
-//   playerOne = playerOneName.value
-//   console.log(playerOne)
-//   playerTwo = playerTwoName.value
-//   console.log(playerTwo)
-//   if (playerOne == "" || playerTwo == "" ) { 
-//     alert("Please enter your names!")
-//   }
-    // window.scrollByPages(1)
-// }
-// startGame.addEventListener("click", handleClick); // how do i make this not run after the user clicks "ok" on the alert box?
+// Player Name Function
+const handleClick = () => {
+  playerOne = playerOneName.value
+  playerTwo = playerTwoName.value
+  if (playerOne == "" || playerTwo == "" ) { 
+    alert("Please enter your names!")
+  } else if (playerOne != "" && playerTwo != "") {
+    window.scrollTo(0, 1000)
+  }
+}
+startGame.addEventListener("click", handleClick); 
 
 // Main Function - Calls the functions which check for winning patterns or a draw
 ticTacToeSquares.forEach((square) => {
@@ -225,12 +223,12 @@ const checkDraw = () => {
 
 // Banner Functions - Player One Wins/Player Two Wins/Draw
 const displayWinBannerOne = () => {
- displayBannerOne.innerHTML = "Player One wins the game! Click reset to play again!"
+ displayBannerOne.innerHTML = `${playerOne} wins the game! Click reset to play again!`
  displayBannerOne.classList.add("show")
 }
 
 const displayWinBannerTwo = () => {
-  displayBannerTwo.innerHTML = "Player Two wins the game! Click reset to play again!"
+  displayBannerTwo.innerHTML = `${playerTwo} wins the game! Click reset to play again!`
   displayBannerTwo.classList.add("show")
  }
 
@@ -244,6 +242,7 @@ resetGame.addEventListener("click", () => {
   ticTacToeSquares.forEach((square) => {
     square.innerHTML = "";
   })
+  
   const playerOneWins = document.querySelectorAll(".player-one__wins")
   const playerTwoWins = document.querySelectorAll(".player-two__wins")
 
@@ -256,7 +255,6 @@ resetGame.addEventListener("click", () => {
   }
   
   displayBannerOne.classList.remove("show")
-
   displayBannerTwo.classList.remove("show")
 
   playerOneTurn = true;

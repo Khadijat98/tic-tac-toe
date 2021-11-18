@@ -215,6 +215,40 @@
   text-align: center;
   padding: 150px 50px 50px;
 }
+#section-1 .player__container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+#section-1 .player__name-field-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  gap: 16px;
+  margin: 30px 50px;
+  width: 290px;
+}
+#section-1 .player__name-field-container .player__name {
+  font-weight: bold;
+  font-size: 16px;
+  align-self: center;
+  border: 1px solid black;
+  padding: 5px 1px;
+}
+#section-1 .player__name-field-container #player__name-one {
+  background-color: #FF540A;
+}
+#section-1 .player__name-field-container #player__name-two {
+  background-color: #26FFE6;
+}
+#section-1 .player__name-field-container .player__name-field {
+  height: 30px;
+  align-self: center;
+  font-size: 14px;
+  padding: 10px 0px;
+}
 #section-1 .home__instructions-header {
   text-align: center;
   margin: 40px;
