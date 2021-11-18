@@ -35,7 +35,7 @@ const handleClick = () => {
 }
 startGame.addEventListener("click", handleClick); 
 
-// Main Function - Calls the functions which check for winning patterns or a draw
+// Main Function
 ticTacToeSquares.forEach((square) => {
   square.addEventListener("click", (event) => {
     ticTacToeInstruction.classList.add("hide")
@@ -242,7 +242,7 @@ resetGame.addEventListener("click", () => {
   ticTacToeSquares.forEach((square) => {
     square.innerHTML = "";
   })
-  
+
   const playerOneWins = document.querySelectorAll(".player-one__wins")
   const playerTwoWins = document.querySelectorAll(".player-two__wins")
 
@@ -260,9 +260,7 @@ resetGame.addEventListener("click", () => {
   playerOneTurn = true;
 })
 
-// Return to Homepage Function
+// Back to Homepage Function
 backtoHome.addEventListener("click", () => {
   location.reload();
 })
-
-
