@@ -12,6 +12,8 @@ const winningPatternFive = document.querySelectorAll(".win-five");
 const winningPatternSix = document.querySelectorAll(".win-six");
 const winningPatternSeven = document.querySelectorAll(".win-seven");
 const winningPatternEight = document.querySelectorAll(".win-eight");
+const displayBannerOne = document.querySelector(".display-banner-one");
+const displayBannerTwo = document.querySelector("#display-banner-two");
 const resetGame = document.querySelector(".reset__btn");
 const backtoHome = document.querySelector(".back-to-home__btn");
 
@@ -22,17 +24,16 @@ let playerTwo;
 let playerOneTurn = true;
 
 // players enter name and this saves when a user clicks start
-const handleClick = () => {
-  playerOne = playerOneName.value
-  console.log(playerOne)
-  playerTwo = playerTwoName.value
-  console.log(playerTwo)
-  if (playerOne == "" || playerTwo == "" ) { 
-    console.log(playerOne)
-    alert("Please enter your names!")
-  }
-}
-startGame.addEventListener("click", handleClick); // how do i make this not run after the user clicks "ok" on the alert box?
+// const handleClick = () => {
+//   playerOne = playerOneName.value
+//   console.log(playerOne)
+//   playerTwo = playerTwoName.value
+//   console.log(playerTwo)
+//   if (playerOne == "" || playerTwo == "" ) { 
+//     alert("Please enter your names!")
+//   }
+// }
+// startGame.addEventListener("click", handleClick); // how do i make this not run after the user clicks "ok" on the alert box?
 
 // assign noughts to player one and crosses to player two
 // need to fill the grid with noughts when player one clicks a square and with crosses when it's player two
@@ -63,6 +64,8 @@ ticTacToeSquares.forEach((square) => {
 // need the computer to determine if noughts are in the winning combo of squares or crosses
 // need the computer to identify if player one wins or player two
 // need to make the computer tell the players who wins - add orange line for player one and turquoise line for player two and display banner
+// display banner
+  //create a p tag in section 2 with a background, height and width that only displays after the player wins and disappears when the player clicks the page
 // need to reset after a winning pattern has been achieved
 // also need to consider the case of no-one winning i.e. a full grid and reset after this
 // Winning patterns
@@ -81,19 +84,20 @@ const checkPatternOne = () => {
     patternOneCombo += patternOne.innerHTML;   
   })
   if (patternOneCombo == "OOO") {
-    alert(`${playerOne} wins the game! Congratulations!!`)
     winningPatternOne.forEach((patternOne) => {
       patternOne.classList.add("player-one__wins")   
     })
-    alert("Click reset to play again!")
-    }
-    else if (patternOneCombo == "XXX") {
-      setTimeout = () => {alert(`${playerTwo} wins the game! Congratulations!!`), 2000} // why doesn't this work?
+    displayWinBannerOne();
+  } else if (patternOneCombo == "XXX") {
       winningPatternOne.forEach((patternOne) => {
       patternOne.classList.add("player-two__wins")   
     })
-      alert("Click reset to play again!")
+    displayWinBannerTwo();
     }
+}
+
+const winningPattern = (winningPatternOne, winningPatternTwo) => {
+  
 }
 
 const checkPatternTwo = () => {
@@ -102,17 +106,15 @@ const checkPatternTwo = () => {
     patternTwoCombo += patternTwo.innerHTML;   
   })
   if (patternTwoCombo == "OOO") {
-    alert(`${playerOne} wins the game! Congratulations!!`)
     winningPatternTwo.forEach((patternTwo) => {
-      patternTwo.classList.add("player-one__wins")   
+      patternTwo.classList.add("player-one__wins")  
     })
-    alert("Click reset to play again!")
-    } else if (patternTwoCombo == "XXX") {
-      alert(`${playerTwo} wins the game! Congratulations!!`)
+    displayWinBannerOne(); 
+  } else if (patternTwoCombo == "XXX") {
       winningPatternTwo.forEach((patternTwo) => {
         patternTwo.classList.add("player-two__wins")   
       })
-        alert("Click reset to play again!")
+    displayWinBannerTwo();
     }
 }
 
@@ -122,128 +124,143 @@ const checkPatternThree = () => {
     patternThreeCombo += patternThree.innerHTML;   
   })
   if (patternThreeCombo == "OOO") {
-    alert(`${playerOne} wins the game! Congratulations!!`)
     winningPatternThree.forEach((patternThree) => {
       patternThree.classList.add("player-one__wins")   
     })
-    alert("Click reset to play again!")
-    } else if (patternThreeCombo == "XXX") {
-      alert(`${playerTwo} wins the game! Congratulations!!`)
+    displayWinBannerOne();
+  } else if (patternThreeCombo == "XXX") {
       winningPatternThree.forEach((patternThree) => {
         patternThree.classList.add("player-two__wins")   
       })
-        alert("Click reset to play again!")
+    displayWinBannerTwo();
     }
 }
 
-// add colours to everything below
+
 const checkPatternFour = () => {
   let patternFourCombo = "";
   winningPatternFour.forEach((patternFour) => {
     patternFourCombo += patternFour.innerHTML;   
   })
-  console.log(patternFourCombo)
-  if (patternFourCombo == "O"+"O"+"O") {
-    alert(`${playerOne} wins the game! Congratulations!!`)
-    location.reload();
-    } else if (patternFourCombo == "X"+"X"+"X") {
-      alert(`${playerOne} wins the game! Congratulations!!`)
-      location.reload();
+  if (patternFourCombo == "OOO") {
+    winningPatternFour.forEach((patternFour) => {
+      patternFour.classList.add("player-one__wins")   
+    })
+    displayWinBannerOne();
+  } else if (patternFourCombo == "XXX") {
+      winningPatternFour.forEach((patternFour) => {
+        patternFour.classList.add("player-two__wins")   
+      })
+    displayWinBannerTwo();
     }
 }
+
 
 const checkPatternFive = () => {
   let patternFiveCombo = "";
   winningPatternFive.forEach((patternFive) => {
-    console.dir(patternFive)
     patternFiveCombo += patternFive.innerHTML;   
   })
-  console.log(patternFiveCombo)
-  if (patternFiveCombo == "O"+"O"+"O") {
-    console.log("player one wins")
-    alert(`${playerOne} wins the game! Congratulations!!`)
-    location.reload();
-    } else if (patternFiveCombo == "X"+"X"+"X") {
-      console.log("player two wins")
-      alert(`${playerOne} wins the game! Congratulations!!`)
-      location.reload();
+  if (patternFiveCombo == "OOO") {
+    winningPatternFive.forEach((patternFive) => {
+      patternFive.classList.add("player-one__wins")   
+    })
+    displayWinBannerOne();
+  } else if (patternFiveCombo == "XXX") {
+      winningPatternFive.forEach((patternFive) => {
+        patternFive.classList.add("player-two__wins")   
+      })
+    displayWinBannerTwo();
     }
 }
 
 const checkPatternSix = () => {
   let patternSixCombo = "";
   winningPatternSix.forEach((patternSix) => {
-    console.dir(patternSix)
     patternSixCombo += patternSix.innerHTML;   
   })
-  console.log(patternSixCombo)
-  if (patternSixCombo == "O"+"O"+"O") {
-    console.log("player one wins")
-    alert(`${playerOne} wins the game! Congratulations!!`)
-    location.reload();
-    } else if (patternSixCombo == "X"+"X"+"X") {
-      console.log("player two wins")
-      alert(`${playerOne} wins the game! Congratulations!!`)
-      location.reload();
+  if (patternSixCombo == "OOO") {
+    winningPatternSix.forEach((patternSix) => {
+      patternSix.classList.add("player-one__wins")   
+    })
+    displayWinBannerOne();
+  } else if (patternSixCombo == "XXX") {
+      winningPatternSix.forEach((patternSix) => {
+        patternSix.classList.add("player-two__wins")   
+      })
+    displayWinBannerTwo();
     }
 }
 
 const checkPatternSeven = () => {
   let patternSevenCombo = "";
   winningPatternSeven.forEach((patternSeven) => {
-    console.dir(patternSeven)
     patternSevenCombo += patternSeven.innerHTML;   
   })
-  console.log(patternSevenCombo)
-  if (patternSevenCombo == "O"+"O"+"O") {
-    console.log("player one wins")
-    alert(`${playerOne} wins the game! Congratulations!!`)
-    location.reload();
-    } else if (patternSevenCombo == "X"+"X"+"X") {
-      console.log("player two wins")
-      alert(`${playerOne} wins the game! Congratulations!!`)
-      location.reload();
+  if (patternSevenCombo == "OOO") {
+    winningPatternSeven.forEach((patternSeven) => {
+      patternSeven.classList.add("player-one__wins")   
+    })
+    displayWinBannerOne();
+  } else if (patternSevenCombo == "XXX") {
+      winningPatternSeven.forEach((patternSeven) => {
+        patternSeven.classList.add("player-two__wins")   
+      })
+    displayWinBannerTwo();
     }
 }
 
 const checkPatternEight = () => {
   let patternEightCombo = "";
   winningPatternEight.forEach((patternEight) => {
-    console.dir(patternEight)
     patternEightCombo += patternEight.innerHTML;   
   })
-  console.log(patternEightCombo)
-  if (patternEightCombo == "O"+"O"+"O") {
-    console.log("player one wins")
-    alert(`${playerOne} wins the game! Congratulations!!`)
-    location.reload();
-    } else if (patternEightCombo == "X"+"X"+"X") {
-      console.log("player two wins")
-      alert(`${playerOne} wins the game! Congratulations!!`)
-      location.reload();
+  if (patternEightCombo == "OOO") {
+    winningPatternEight.forEach((patternEight) => {
+      patternEight.classList.add("player-one__wins")   
+    })
+    displayWinBannerOne();
+  } else if (patternEightCombo == "XXX") {
+      winningPatternEight.forEach((patternEight) => {
+        patternEight.classList.add("player-two__wins")   
+      })
+    displayWinBannerTwo();
     }
 }
 
 const checkDraw = () => {
-
+  ticTacToeSquares.forEach((square) => {
+    let fullGrid = "";
+    fullGrid += square.innerHTML;
+    console.log(draw)
+  })
 }
 
-resetGame.addEventListener("click", () => {
-  location.reload();
+// winning banner functions
+const displayWinBannerOne = () => {
+ displayBannerOne.innerHTML = "Player One wins the game! Click reset to play again!"
+ displayBannerOne.classList.add("show")
+}
+
+const displayWinBannerTwo = () => {
+  displayBannerTwo.innerHTML = "Player Two wins the game! Click reset to play again!"
+  displayBannerTwo.classList.add("show")
+ }
+
+// when the player presses the reset button, progress is cleared and the game starts again. the "click anywhere" text reappears
+resetGame.addEventListener("click", () => { // is there a way to clear the grid without doing a location reload?
+  // location.reload();
+  for (let i = 0; i <= 9; i++) {
+
+  }
+  ticTacToeSquares.forEach((square) => {
+    square.innerHTML = "";
+  })
 })
 
+// when the player presses back to the homepage, the game resets
 backtoHome.addEventListener("click", () => {
   location.reload();
 })
 
-
-    
-  
-
-// Game
-// when the player presses back to the homepage, the game resets
-// when the player presses the reset button, progress is cleared and the game starts again. the "click anywhere" text reappears
-// Banners
-  // "Player name" it's your turn!
-  // "Player name" wins the game! Congratulations!!
 
