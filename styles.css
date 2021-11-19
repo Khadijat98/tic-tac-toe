@@ -53,11 +53,11 @@
   text-decoration: none;
   color: black;
   font-size: 30px;
+  background-color: #2AD331;
   box-shadow: 0px 1px #075e0a, 1px 2px #075e0a, 2px 3px #075e0a, 3px 4px #075e0a, 5px 6px black;
   width: 100px;
   border: 2px solid black;
   border-radius: 5px;
-  background-color: #2AD331;
   text-align: center;
   padding: 5px 10px;
   cursor: pointer;
@@ -171,20 +171,28 @@
 #section-2 .tic-tac-toe__container .tic-tac-toe__instruction.hide {
   display: none;
 }
-#section-2 .display-banner-one, #section-2 #display-banner-two, #section-2 .display-banner-draw {
+#section-2 .display-banner__one, #section-2 .display-banner__two, #section-2 .display-banner__draw {
   height: 100px;
   width: 100%;
   padding: 0px 10px;
   border: 3px solid black;
-  background-color: #FFFD82;
   display: none;
 }
 @media only screen and (min-width: 500px) {
-  #section-2 .display-banner-one, #section-2 #display-banner-two, #section-2 .display-banner-draw {
+  #section-2 .display-banner__one, #section-2 .display-banner__two, #section-2 .display-banner__draw {
     margin-top: 100px;
   }
 }
-#section-2 .display-banner-one.show, #section-2 #display-banner-two.show, #section-2 .display-banner-draw.show {
+#section-2 .display-banner__one {
+  background-color: #FF540A;
+}
+#section-2 .display-banner__two {
+  background-color: #26FFE6;
+}
+#section-2 .display-banner__draw {
+  background-color: white;
+}
+#section-2 .display-banner__one.show, #section-2 .display-banner__two.show, #section-2 .display-banner__draw.show {
   display: block;
   text-align: center;
   font-size: 30px;
@@ -192,7 +200,7 @@
   padding-top: 18px;
 }
 @media only screen and (min-width: 500px) {
-  #section-2 .display-banner-one.show, #section-2 #display-banner-two.show, #section-2 .display-banner-draw.show {
+  #section-2 .display-banner__one.show, #section-2 .display-banner__two.show, #section-2 .display-banner__draw.show {
     width: 100vw;
   }
 }
@@ -230,7 +238,12 @@
   justify-items: center;
   gap: 16px;
   margin: 30px 50px;
-  width: 290px;
+  width: 295px;
+}
+@media only screen and (min-width: 945px) {
+  #section-1 .player__name-field-container {
+    width: 310px;
+  }
 }
 #section-1 .player__name-field-container .player__name {
   font-weight: bold;
@@ -239,10 +252,10 @@
   border: 1px solid black;
   padding: 5px 1px;
 }
-#section-1 .player__name-field-container #player__name-one {
+#section-1 .player__name-field-container .player__name-one {
   background-color: #FF540A;
 }
-#section-1 .player__name-field-container #player__name-two {
+#section-1 .player__name-field-container .player__name-two {
   background-color: #26FFE6;
 }
 #section-1 .player__name-field-container .player__name-field {
@@ -251,19 +264,26 @@
   font-size: 14px;
   padding: 10px 0px;
 }
+@media only screen and (min-width: 945px) {
+  #section-1 .player__name-field-container .player__name-field {
+    font-size: 16px;
+  }
+}
 #section-1 .home__instructions-header {
   text-align: center;
   margin: 40px;
-  font-size: 30px;
+  font-size: 36px;
 }
 #section-1 .home__instructions-description {
   text-align: center;
   margin: 20px;
   font-weight: bolder;
+  font-size: 20px;
 }
 @media only screen and (min-width: 945px) {
   #section-1 .home__instructions-description {
     margin: 20px 200px;
+    font-size: 22px;
   }
 }
 @media only screen and (min-width: 1300px) {
@@ -272,7 +292,7 @@
   }
 }
 
-.back-to-home__btn, .reset__btn, .tic-tac-toe__square, .scoreboard__header, .home__header, .home__instructions-header, .start__btn, .display-banner-one.show, #display-banner-two.show {
+.back-to-home__btn, .reset__btn, .tic-tac-toe__square, .scoreboard__header, .home__header, .home__instructions-header, .start__btn, .display-banner__one.show, .display-banner__two.show, .display-banner__draw.show {
   font-family: "Caveat Brush", cursive;
 }
 

@@ -12,9 +12,9 @@ const winningPatternFive = document.querySelectorAll(".win-five");
 const winningPatternSix = document.querySelectorAll(".win-six");
 const winningPatternSeven = document.querySelectorAll(".win-seven");
 const winningPatternEight = document.querySelectorAll(".win-eight");
-const displayBannerOne = document.querySelector(".display-banner-one");
-const displayBannerTwo = document.querySelector("#display-banner-two");
-const displayBannerDraw = document.querySelector(".display-banner-draw");
+const displayBannerOne = document.querySelector(".display-banner__one");
+const displayBannerTwo = document.querySelector(".display-banner__two");
+const displayBannerDraw = document.querySelector(".display-banner__draw");
 const resetGame = document.querySelector(".reset__btn");
 const backtoHome = document.querySelector(".back-to-home__btn");
 
@@ -38,7 +38,7 @@ const winningPatterns = [
 const handleClick = () => {
   playerOne = playerOneName.value
   playerTwo = playerTwoName.value
-  if (playerOne == "" || playerTwo == "") {
+  if (playerOne === "" || playerTwo === "") {
     alert("Please enter your names!")
   } else if (playerOne != "" && playerTwo != "") {
     window.scrollTo(0, 1000)
@@ -79,12 +79,12 @@ const getPatternComboString = (winningPattern) => {
 const checkWinningPatterns = (winningPattern) => {
   let patternCombo = getPatternComboString(winningPattern);
 
-  if (patternCombo == "OOO") {
+  if (patternCombo === "OOO") {
     winningPattern.forEach((pattern) => {
       pattern.classList.add("player-one__wins")
     })
     displayWinBanner(displayBannerOne, playerOne);
-  } else if (patternCombo == "XXX") {
+  } else if (patternCombo === "XXX") {
     winningPattern.forEach((pattern) => {
       pattern.classList.add("player-two__wins")  
     })
@@ -130,13 +130,15 @@ resetGame.addEventListener("click", () => {
   for (let i = 0; i < playerTwoWins.length; i++) {
     playerTwoWins[i].classList.remove("player-two__wins");
   }
-
-  displayBannerOne.classList.remove("show")
-  displayBannerTwo.classList.remove("show")
+  
+  displayBannerOne.classList.remove("show");
+  displayBannerTwo.classList.remove("show");
+  displayBannerDraw.classList.remove("show")
 
   ticTacToeInstruction.classList.remove("hide")
 
   playerOneTurn = true;
+
 })
 
 // Back to Homepage Function

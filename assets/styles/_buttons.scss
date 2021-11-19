@@ -1,16 +1,18 @@
+@import "_variables";
+
 .back-to-home__btn-container {
   padding: 20px 20px 0px;
   
   .back-to-home__btn {
     text-decoration: none;
-    color: black;
+    color: $primary-colour;
     font-size: 20px;
     padding-left: 5px;
-    background-color: #FFFD82;
-    box-shadow: 0px 1px #868530, 1px 2px #868530, 2px 3px #868530,
-                3px 4px #868530, 5px 6px black;
+    background-color: $back-to-home-btn-colour;
+    box-shadow: 0px 1px $back-to-home-btn-shadow, 1px 2px $back-to-home-btn-shadow, 2px 3px $back-to-home-btn-shadow,
+                3px 4px $back-to-home-btn-shadow, 5px 6px $primary-colour;
     width: 200px;
-    border: 2px solid black;
+    border: 2px solid $primary-colour;
     border-radius: 5px;
     text-align: right;
     padding: 12px;
@@ -18,7 +20,7 @@
   }
 
   .back-to-home__btn:hover {
-    background-color:#fffb25;
+    background-color: $back-to-home-btn-hover;
   }
 }
 
@@ -33,17 +35,17 @@
     width: 90px;
     margin: 100px 150px 0;
     text-align: center;
-    background-color: #820933;
-    box-shadow: 0px 1px #4d051e, 1px 2px #4d051e, 2px 3px #4d051e,
-                3px 4px #4d051e, 5px 6px black;
-    border: 2px solid black;
+    background-color: $reset-btn-colour;
+    box-shadow: 0px 1px $reset-btn-shadow, 1px 2px $reset-btn-shadow, 2px 3px $reset-btn-shadow,
+                3px 4px $reset-btn-shadow, 5px 6px $primary-colour;
+    border: 2px solid $primary-colour;
     border-radius: 5px;
     font-size: 18px;
-    color: white;
+    color: $secondary-colour;
   }
 
   .reset__btn:hover {
-    background-color: #c41250;
+    background-color: $reset-btn-hover;
     cursor: pointer;
   }
 }
@@ -57,25 +59,25 @@
     height: 50px;
     margin: 50px 150px;
     text-decoration: none;
-    color: black;
+    color: $primary-colour;
     font-size: 30px;
-    box-shadow: 0px 1px #075e0a, 1px 2px #075e0a, 2px 3px #075e0a,
-                3px 4px #075e0a, 5px 6px black;
+    background-color: $start-btn-colour;
+    box-shadow: 0px 1px $start-btn-shadow, 1px 2px $start-btn-shadow, 2px 3px $start-btn-shadow,
+                3px 4px $start-btn-shadow, 5px 6px $primary-colour;
     width: 100px;
-    border: 2px solid black;
+    border: 2px solid $primary-colour;
     border-radius: 5px;
-    background-color: #2AD331;
     text-align: center;
     padding: 5px 10px;
     cursor: pointer;
   }
 
   .start__btn:hover {
-    background-color: #14f81b;
+    background-color: $start-btn-hover;
   }
 }
 
 .back-to-home__btn:active, .reset__btn:active, .start__btn:active {
-  box-shadow: 1px 1px black;
+  box-shadow: 1px 1px $primary-colour;
   transform: translate(1px, 2px);
 }

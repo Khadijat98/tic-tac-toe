@@ -10,10 +10,10 @@ This project was created in week 4 of the _nology course. The aim was to gain mo
 Selectors were created for the name input boxes, start, reset and back to homepage buttons, the tic tac toe grid & instruction, the winning pattern combinations and the display banners for announcing the winner or a draw.
 
 **Variables**
-The variables that were set were for player one, player two and player one's turn, which was initialised at true, as this would be the player who would start first.
+The variables that were set were for player one, player two and player one's turn, which was initialised at true, as this would be the player who would start first. An array for the various winning patterns was also created.
 
 **Player Name Function**
-This created a function which would save the names the two players input on the home page when the start button was clicked. If no names were entered, an alert showed asking for names to be entered and if names were entered, the page would jump to the next page after the start button was clicked.
+This created a function which saved the names the two players input on the home page when the start button was clicked. If no names were entered, an alert showed asking for names to be entered and if names were entered, the page jumped to the next page after the start button was clicked.
 
 **Main Function**
 This filled in the individual tic-tac-toe squares, when clicked, with an "O" if it was player one's turn. It then set player one's turn to false, indicating player two's turn and filled in a square with an "X" before setting player one's turn to true. It then called in the check functions for checking if a winning pattern of squares had been selected or if no wins were achieved after a full grid of squares were selected, indicating a draw.
@@ -22,7 +22,7 @@ This filled in the individual tic-tac-toe squares, when clicked, with an "O" if 
 This created an empty string and added the value of the square that was selected to this string, which had a max length of three, concatenating the "Xs" and "Os".
 
 **Function for Checking for a Winning Pattern**
-This used the previous function to determine which player had one the game, based on the values of the selected squares. If the overall combination of strings was equal to "OOO", player one was the winner, so the winning pattern of squares was highlighted with orange and a banner congratulating them by name was displayed. If the overall combination of strings was equal to "XXX", this indicated player two's win. The winning combination of squares was highlighted turquoise and a banner congratulating this player by name was displayed.
+This used the previous function to determine which player had won the game, based on the values of the selected squares. If the overall combination of strings was equal to "OOO", player one was the winner, so the winning pattern of squares was highlighted with orange and a banner congratulating them by name was displayed. If the overall combination of strings was equal to "XXX", this indicated player two's win. The winning combination of squares was highlighted turquoise and a banner congratulating this player by name was displayed.
 
 The tic-tac-toe grid was numbered as follows:
 [1, 2, 3
@@ -55,4 +55,4 @@ This reloaded the game and took the user back to the homepage after the back to 
 There are no known bugs as of 19/11/2021.
 
 **Summary**
-Overall, I am very happy with what I managed to achieve with this project. I managed to implement most of the features I wanted to add, and I was able to break down the problem better than I could with the calculator, making it easier for me to write the functions I needed, particularly for the winning patterns. I was also able to refactor the code for the winning patterns and the display banners for the winners with assistance. In the future, I would like to be able to write more general functions from the beginning of a project, so that I can condense the code I write and easily reuse functions. For the game, I would like to add the ability to keep score so the players can easily keep track.
+Overall, I am very happy with what I managed to achieve with this project. I managed to implement most of the features I wanted to add, and I was able to break down the problem better than I could with the calculator, making it easier for me to write the functions I needed, particularly for the winning patterns. I was also able to refactor the code for the winning patterns and the display banners for the winners with assistance. In the future, I would like to be able to write more general functions from the beginning of a project, so that I can condense the code I write and easily reuse functions. For the game, I would like to add the ability to keep score.
