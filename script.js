@@ -34,16 +34,6 @@ const winningPatterns = [
   winningPatternEight,
 ];
 
-// const displayWinningBanners = [
-//   displayBannerOne,
-//   displayBannerTwo
-// ];
-
-// const players = [
-//   playerOne,
-//   playerTwo
-// ];
-
 // Player Name Function
 const handleClick = () => {
   playerOne = playerOneName.value
@@ -68,7 +58,6 @@ ticTacToeSquares.forEach((square) => {
       playerOneTurn = true;
     }
 
-    //turn this into loop that calls a single check pattern function
     winningPatterns.forEach((winningPattern) => {
       checkWinningPatterns(winningPattern);
     })
@@ -94,14 +83,12 @@ const checkWinningPatterns = (winningPattern) => {
     winningPattern.forEach((pattern) => {
       pattern.classList.add("player-one__wins")
     })
-    displayWinBannerOne();
-    // displayWinBanner(player);
+    displayWinBanner(displayBannerOne, playerOne);
   } else if (patternCombo == "XXX") {
     winningPattern.forEach((pattern) => {
-      pattern.classList.add("player-two__wins")
+      pattern.classList.add("player-two__wins")  
     })
-    displayWinBannerTwo();
-    
+    displayWinBanner(displayBannerTwo, playerTwo);
   }
 };
 
@@ -116,30 +103,11 @@ const checkDraw = () => {
   }
 }
 
-// Banner Functions - Player One Wins/Player Two Wins/Draw
-const displayWinBannerOne = () => {
-  displayBannerOne.innerHTML = `${playerOne} wins the game! Click reset to play again!`
-  displayBannerOne.classList.add("show")
+// Banner Functions - Player Wins / Draw
+const displayWinBanner = (winningBanner, player) => {
+  winningBanner.innerHTML = `${player} wins the game! Click reset to play again!`
+  winningBanner.classList.add("show")
 }
-
-const displayWinBannerTwo = () => {
-  displayBannerTwo.innerHTML = `${playerTwo} wins the game! Click reset to play again!`
-  displayBannerTwo.classList.add("show")
-}
-
-// const getWinningPlayer = (players) => {
-//   players.forEach((player) => {
-//     return player;
-//   })
-// }
-
-// const displayWinBanner = (displayWinningBanners) => {
-//   displayWinningBanners.forEach((winningBanner) => {
-//     getWinningPlayer(player);
-//     winningBanner.innerHTML = `${player} wins the game! Click reset to play again!`
-//     winningBanner.classList.add("show")
-//   })
-// }
 
 const displayDrawBanner = () => {
   displayBannerDraw.innerHTML = "It's a draw! Click reset to play again!"
