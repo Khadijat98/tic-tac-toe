@@ -46,3 +46,12 @@
 
 ### Back to Homepage Function
 #### This reloaded the game and took the user back to the homepage after the back to home page button was clicked.
+
+### Known Bugs
+#### There are no known bugs as of 19/11/2021.
+
+### Future Improvements
+#### I would like to add the ability to keep score so the players can easily keep track.
+
+### Summary
+#### Overall, I am very happy with what I managed to achieve with this project. I managed to implement most of the features I wanted to add, and I was able to break down the problem better than I could with the calculator, making it easier for me to write the functions I needed, particularly for the winning patterns. The code for this 
