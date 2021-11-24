@@ -50,12 +50,14 @@ startGame.addEventListener("click", handleClick);
 ticTacToeSquares.forEach((square) => {
   square.addEventListener("click", (event) => {
     ticTacToeInstruction.classList.add("hide")
-    if (playerOneTurn) {
-      event.target.innerHTML = "O"
-      playerOneTurn = false;
-    } else {
-      event.target.innerHTML = "X"
-      playerOneTurn = true;
+    if (event.target.innerHTML === "") {
+      if (playerOneTurn) {
+        event.target.innerHTML = "O"
+        playerOneTurn = false;
+      } else {
+        event.target.innerHTML = "X"
+        playerOneTurn = true;
+      }
     }
 
     winningPatterns.forEach((winningPattern) => {
@@ -114,14 +116,22 @@ const displayDrawBanner = () => {
   displayBannerDraw.classList.add("show")
 }
 
-// Reset Function
-resetGame.addEventListener("click", () => {
+// Game Reset Function
+const resetSquares = () => {
   ticTacToeSquares.forEach((square) => {
     square.innerHTML = "";
   })
+}
 
-  const playerOneWins = document.querySelectorAll(".player-one__wins")
-  const playerTwoWins = document.querySelectorAll(".player-two__wins")
+const removeDisplayBanners = () => {
+  displayBannerOne.classList.remove("show");
+  displayBannerTwo.classList.remove("show");
+  displayBannerDraw.classList.remove("show") 
+}
+
+const removePlayerWins = () => {
+  const playerOneWins = document.querySelectorAll(".player-one__wins");
+  const playerTwoWins = document.querySelectorAll(".player-two__wins");
 
   for (let i = 0; i < playerOneWins.length; i++) {
     playerOneWins[i].classList.remove("player-one__wins");
@@ -130,18 +140,31 @@ resetGame.addEventListener("click", () => {
   for (let i = 0; i < playerTwoWins.length; i++) {
     playerTwoWins[i].classList.remove("player-two__wins");
   }
-  
-  displayBannerOne.classList.remove("show");
-  displayBannerTwo.classList.remove("show");
-  displayBannerDraw.classList.remove("show")
+}
 
-  ticTacToeInstruction.classList.remove("hide")
-
+const handleGameReset = () => {
+  resetSquares();
+  removePlayerWins();
+  removeDisplayBanners();
+  ticTacToeInstruction.classList.remove("hide");
   playerOneTurn = true;
+}
 
-})
+resetGame.addEventListener("click", handleGameReset);
 
-// Back to Homepage Function
-backtoHome.addEventListener("click", () => {
-  location.reload();
-})
+// Full Reset Function
+const resetPlayerNames = () => {
+  playerOneName.value = "";
+  playerTwoName.value = "";
+}
+
+const handleFullReset = () => {
+  resetSquares();
+  removePlayerWins();
+  removeDisplayBanners();
+  resetPlayerNames();
+  ticTacToeInstruction.classList.remove("hide");
+  playerOneTurn = true;
+}
+
+backtoHome.addEventListener("click", handleFullReset)

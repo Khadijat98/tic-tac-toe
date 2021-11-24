@@ -1,22 +1,18 @@
 @import "_variables";
 
 .back-to-home__btn-container {
-  padding: 20px 20px 0px;
+  padding: 40px 20px 0px;
   
   .back-to-home__btn {
     text-decoration: none;
     color: $primary-colour;
     font-size: 20px;
-    padding-left: 5px;
     background-color: $back-to-home-btn-colour;
     box-shadow: 0px 1px $back-to-home-btn-shadow, 1px 2px $back-to-home-btn-shadow, 2px 3px $back-to-home-btn-shadow,
                 3px 4px $back-to-home-btn-shadow, 5px 6px $primary-colour;
-    width: 200px;
     border: 2px solid $primary-colour;
     border-radius: 5px;
-    text-align: right;
     padding: 12px;
-    height: 50px;
   }
 
   .back-to-home__btn:hover {
@@ -34,7 +30,6 @@
     height: 30px;
     width: 90px;
     margin: 100px 150px 0;
-    text-align: center;
     background-color: $reset-btn-colour;
     box-shadow: 0px 1px $reset-btn-shadow, 1px 2px $reset-btn-shadow, 2px 3px $reset-btn-shadow,
                 3px 4px $reset-btn-shadow, 5px 6px $primary-colour;
@@ -67,8 +62,6 @@
     width: 100px;
     border: 2px solid $primary-colour;
     border-radius: 5px;
-    text-align: center;
-    padding: 5px 10px;
     cursor: pointer;
   }
 

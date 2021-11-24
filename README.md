@@ -53,13 +53,13 @@ Similarly to the function for the winning patterns, these concatenated the "Xs" 
 
 These displayed a banner telling player one or player two by name they had won the game, or that a draw had been achieved, depending on the outcome of the game.
 
-**Reset Function**
+**Game Reset Function**
 
 This reset the game, after the reset button was clicked, by clearing the squares of their values and highlighted colours, removing the banner displayed on the screen and setting player one's turn to true, so they would start first.
 
-**Back to Homepage Function**
+**Full Reset Function**
 
-This reloaded the game and took the user back to the homepage after the back to home page button was clicked.
+This called on the same functions as the game reset function with the addition of a function to clear the player name input fields to reset both the home and game pages.
 
 **Known Bugs**
 
